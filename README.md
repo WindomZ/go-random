@@ -18,8 +18,8 @@ go get -u github.com/WindomZ/go-random
 ## TODO
 
 * Support for more types
-* Random float32
 * Random more string
+* More Test and Benchmark
 
 ## LICENSE
 

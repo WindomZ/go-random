@@ -6,7 +6,6 @@ import (
 )
 
 func RandomBytes(n int) []byte {
-	rand.Seed(time.Now().Unix())
 	b := make([]byte, n)
 	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 0; {
 		if remain == 0 {
@@ -23,7 +22,6 @@ func RandomBytes(n int) []byte {
 }
 
 func RandomTimeBytes(n int) []byte {
-	rand.Seed(time.Now().Unix())
 	b := make([]byte, n)
 	if n <= 8 {
 		return b

@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"math/rand"
 	"strconv"
-	"time"
 )
 
 const (
@@ -17,7 +16,6 @@ const (
 )
 
 func RandomString(n int) string {
-	rand.Seed(time.Now().Unix())
 	b := make([]byte, n)
 	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 0; {
 		if remain == 0 {
@@ -34,7 +32,6 @@ func RandomString(n int) string {
 }
 
 func RandomCaptcha(n int) string {
-	rand.Seed(time.Now().Unix())
 	b := make([]byte, n)
 	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 0; {
 		if remain == 0 {

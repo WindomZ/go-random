@@ -30,14 +30,14 @@ func RandomBytes(n int) []byte {
 
 func RandomTimeBytes(n int) []byte {
 	b := make([]byte, n)
-	if n <= 8 {
+	if n <= 5 {
 		return b
 	}
 	bt := Int64ToBytes(time.Now().Unix())
-	for i := 0; i < 8; i++ {
-		b[i] = bt[i]
+	for i := 0; i < 5; i++ {
+		b[i] = bt[i+3]
 	}
-	for i, cache, remain := n-9, rand.Int63(), letterIdxMax; i >= 0; {
+	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 5; {
 		if remain == 0 {
 			cache, remain = rand.Int63(), letterIdxMax
 		}

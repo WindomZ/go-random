@@ -7,22 +7,27 @@ import (
 )
 
 const (
-	letterBytes0  = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	letterBytes1  = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	letterBytes2  = "0123456789"
-	letterIdxBits = 6
-	letterIdxMask = 1<<letterIdxBits - 1
-	letterIdxMax  = 63 / letterIdxBits
+	letterBytes_09aZ   = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	letterBytes_Base58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+	letterBytes_aZ     = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	letterBytes_09     = "0123456789"
+	letterBytes_Hex    = "0123456789ABCDEF"
+	letterIdxBits      = 6
+	letterIdxMask      = 1<<letterIdxBits - 1
+	letterIdxMax       = 63 / letterIdxBits
 )
 
-func RandomString(n int) string {
+func randomString(n int, letters string) string {
+	if n <= 0 {
+		return ""
+	}
 	b := make([]byte, n)
 	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 0; {
 		if remain == 0 {
 			cache, remain = rand.Int63(), letterIdxMax
 		}
-		if idx := int(cache & letterIdxMask); idx < len(letterBytes1) {
-			b[i] = letterBytes1[idx]
+		if idx := int(cache & letterIdxMask); idx < len(letters) {
+			b[i] = letters[idx]
 			i--
 		}
 		cache >>= letterIdxBits
@@ -31,20 +36,24 @@ func RandomString(n int) string {
 	return string(b)
 }
 
+func RandomString(n int) string {
+	return randomString(n, letterBytes_aZ)
+}
+
+func RandomAlphabet(n int) string {
+	return randomString(n, letterBytes_aZ)
+}
+
 func RandomCaptcha(n int) string {
-	b := make([]byte, n)
-	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 0; {
-		if remain == 0 {
-			cache, remain = rand.Int63(), letterIdxMax
-		}
-		if idx := int(cache & letterIdxMask); idx < len(letterBytes2) {
-			b[i] = letterBytes2[idx]
-			i--
-		}
-		cache >>= letterIdxBits
-		remain--
-	}
-	return string(b)
+	return randomString(n, letterBytes_Base58)
+}
+
+func RandomNumCaptcha(n int) string {
+	return randomString(n, letterBytes_09)
+}
+
+func RandomHexString(n int) string {
+	return randomString(n, letterBytes_Hex)
 }
 
 func RandomJson(n int) string {

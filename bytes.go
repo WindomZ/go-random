@@ -1,4 +1,4 @@
-package random
+package gorandom
 
 import (
 	"math/rand"
@@ -28,11 +28,13 @@ func RandomBytes(n int) []byte {
 	return randomBytes(n, letterBytes_09aZ)
 }
 
-func RandomTimeBytes(n int) []byte {
-	b := make([]byte, n)
+var EmptyBytes []byte = []byte{}
+
+func RandomBytesByTime(n int) []byte {
 	if n <= 5 {
-		return b
+		return EmptyBytes
 	}
+	b := make([]byte, n)
 	bt := Int64ToBytes(time.Now().Unix())
 	for i := 0; i < 5; i++ {
 		b[i] = bt[i+3]

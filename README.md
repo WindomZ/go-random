@@ -1,11 +1,17 @@
 # go-random
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-## Overview
+Simple way to generate random values for Golang.
 
-* Random string
-* Random bytes, bytes with time
-* Random int64, int32, int, int16
-* Random float64, float3
+![v0.2.0](https://img.shields.io/badge/version-v0.2.0-yellow.svg)
+![status](https://img.shields.io/badge/status-beta-yellow.svg)
+
+## Features
+
+- [x] Random string
+- [x] Random bytes, bytes with time
+- [x] Random int64, int32, int, int16
+- [x] Random float64, float32
 
 ## Installation
 
@@ -13,12 +19,6 @@
 go get -u github.com/WindomZ/go-random
 ```
 
-## TODO
+## License
 
-* Support for more types
-* Random more string
-* More Test and Benchmark
-
-## LICENSE
-
-MIT(http://opensource.org/licenses/mit-license.php)
+The [MIT License](https://github.com/WindomZ/go-random/blob/master/LICENSE)

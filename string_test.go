@@ -1,41 +1,92 @@
 package gorandom
 
-import "testing"
+import (
+	"github.com/WindomZ/testify/assert"
+	"testing"
+)
 
-const COUNT_STRING int = 10
+const COUNT_STRING int = 10000
 
-func TestRandomString(t *testing.T) {
+func TestString_RandomString(t *testing.T) {
+	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
-		t.Log(RandomString(10))
+		s := RandomString(10)
+		assert.Equal(t, len(s), 10)
+
+		_, ok := results[s]
+		assert.False(t, ok)
+
+		results[s] = s
+		assert.Equal(t, len(results), i+1)
 	}
 }
 
-func TestRandomAlphabet(t *testing.T) {
+func TestString_RandomAlphabet(t *testing.T) {
+	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
-		t.Log(RandomAlphabet(10))
+		s := RandomAlphabet(10)
+		assert.Equal(t, len(s), 10)
+
+		_, ok := results[s]
+		assert.False(t, ok)
+
+		results[s] = s
+		assert.Equal(t, len(results), i+1)
 	}
 }
 
-func TestRandomCaptcha(t *testing.T) {
+func TestString_RandomCaptcha(t *testing.T) {
+	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
-		t.Log(RandomCaptcha(10))
+		s := RandomCaptcha(10)
+		assert.Equal(t, len(s), 10)
+
+		_, ok := results[s]
+		assert.False(t, ok)
+
+		results[s] = s
+		assert.Equal(t, len(results), i+1)
 	}
 }
 
-func TestRandomNumCaptcha(t *testing.T) {
+func TestString_RandomNumCaptcha(t *testing.T) {
+	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
-		t.Log(RandomNumCaptcha(10))
+		s := RandomNumCaptcha(10)
+		assert.Equal(t, len(s), 10)
+
+		_, ok := results[s]
+		assert.False(t, ok)
+
+		results[s] = s
+		assert.Equal(t, len(results), i+1)
 	}
 }
 
-func TestRandomHexString(t *testing.T) {
+func TestString_RandomHexString(t *testing.T) {
+	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
-		t.Log(RandomHexString(10))
+		s := RandomHexString(10)
+		assert.Equal(t, len(s), 10)
+
+		_, ok := results[s]
+		assert.False(t, ok)
+
+		results[s] = s
+		assert.Equal(t, len(results), i+1)
 	}
 }
 
-func TestRandomJson(t *testing.T) {
+func TestString_RandomJson(t *testing.T) {
+	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
-		t.Log(RandomJson(10))
+		s := RandomJson(10)
+		assert.Equal(t, len(s), 201)
+
+		_, ok := results[s]
+		assert.False(t, ok)
+
+		results[s] = s
+		assert.Equal(t, len(results), i+1)
 	}
 }

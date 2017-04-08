@@ -2,9 +2,9 @@ package gorandom
 
 import "testing"
 
-const COUNT_FLOAT int = 100
+const COUNT_FLOAT int = 10000
 
-func TestRandomFloat32(t *testing.T) {
+func TestFloat_RandomFloat32(t *testing.T) {
 	for i := 0; i < COUNT_FLOAT; i++ {
 		//t.Log(RandomFloat32())
 		n := RandomFloat32()
@@ -14,7 +14,7 @@ func TestRandomFloat32(t *testing.T) {
 	}
 }
 
-func TestRandomFloat32n(t *testing.T) {
+func TestFloat_RandomFloat32n(t *testing.T) {
 	for i := 0; i < COUNT_FLOAT; i++ {
 		//t.Log(RandomFloat32n(10))
 		n := RandomFloat32n(10)
@@ -26,7 +26,7 @@ func TestRandomFloat32n(t *testing.T) {
 	}
 }
 
-func TestRandomFloat64(t *testing.T) {
+func TestFloat_RandomFloat64(t *testing.T) {
 	for i := 0; i < COUNT_FLOAT; i++ {
 		//t.Log(RandomFloat64())
 		n := RandomFloat64()
@@ -36,7 +36,7 @@ func TestRandomFloat64(t *testing.T) {
 	}
 }
 
-func TestRandomFloat64n(t *testing.T) {
+func TestFloat_RandomFloat64n(t *testing.T) {
 	for i := 0; i < COUNT_FLOAT; i++ {
 		//t.Log(RandomFloat64n(10))
 		n := RandomFloat64n(10)

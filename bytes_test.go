@@ -8,6 +8,9 @@ import (
 const COUNT_BYTES int = 10000
 
 func TestBytes_RandomBytes(t *testing.T) {
+	assert.Equal(t, RandomBytes(-1), EmptyBytes)
+	assert.Equal(t, RandomBytes(0), EmptyBytes)
+
 	results := make(map[string][]byte)
 	for i := 0; i < COUNT_BYTES; i++ {
 		b := RandomBytes(12)

@@ -8,6 +8,9 @@ import (
 const COUNT_STRING int = 10000
 
 func TestString_RandomString(t *testing.T) {
+	assert.Empty(t, RandomString(-1))
+	assert.Empty(t, RandomString(0))
+
 	results := make(map[string]string)
 	for i := 0; i < COUNT_STRING; i++ {
 		s := RandomString(10)

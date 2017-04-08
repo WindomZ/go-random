@@ -5,9 +5,11 @@ import (
 	"time"
 )
 
+var EmptyBytes []byte = []byte{}
+
 func randomBytes(n int, letters string) []byte {
 	if n <= 0 {
-		return []byte{}
+		return EmptyBytes
 	}
 	b := make([]byte, n)
 	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i >= 0; {
@@ -27,8 +29,6 @@ func randomBytes(n int, letters string) []byte {
 func RandomBytes(n int) []byte {
 	return randomBytes(n, letterBytes_09aZ)
 }
-
-var EmptyBytes []byte = []byte{}
 
 func RandomBytesByTime(n int) []byte {
 	if n <= 5 {

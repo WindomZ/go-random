@@ -1,4 +1,4 @@
-package random
+package gorandom
 
 import (
 	"encoding/json"
@@ -61,9 +61,6 @@ func RandomJson(n int) string {
 	for i := 0; i < n; i++ {
 		m[RandomString(5)+strconv.Itoa(i)] = RandomString(7) + strconv.Itoa(i)
 	}
-	d, err := json.Marshal(m)
-	if err != nil {
-		return ""
-	}
+	d, _ := json.Marshal(m)
 	return string(d)
 }

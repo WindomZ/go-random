@@ -1,17 +1,19 @@
 # go-random
+[![Build Status](https://travis-ci.org/WindomZ/go-random.svg?branch=master)](https://travis-ci.org/WindomZ/go-random)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Coverage Status](https://coveralls.io/repos/github/WindomZ/go-random/badge.svg?branch=dev)](https://coveralls.io/github/WindomZ/go-random?branch=dev)
 
 Simple way to generate random values for Golang.
 
-![v0.2.0](https://img.shields.io/badge/version-v0.2.0-yellow.svg)
-![status](https://img.shields.io/badge/status-beta-yellow.svg)
+![v1.0.0](https://img.shields.io/badge/version-v1.0.0-blue.svg)
+![status](https://img.shields.io/badge/status-stable-green.svg)
 
 ## Features
 
 - [x] Random string
-- [x] Random bytes, bytes with time
-- [x] Random int64, int32, int, int16
-- [x] Random float64, float32
+- [x] Random bytes
+- [x] Random int64, int32, int and int16
+- [x] Random float64 and float32
 
 ## Installation
 

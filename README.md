@@ -14,6 +14,7 @@ Simple way to generate random values for Golang.
 - [x] Random bytes
 - [x] Random int64, int32, int and int16
 - [x] Random float64 and float32
+- [x] No third party library dependent, except unit testing
 
 ## Installation
 

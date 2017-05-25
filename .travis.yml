@@ -6,12 +6,17 @@ go:
   - 1.5.x
   - 1.6.x
   - 1.7.x
-  - master
+  - 1.8.x
+  - tip
 
 before_install:
-  - go get github.com/WindomZ/testify/assert
+  - go get -t -v ./...
   - go get github.com/mattn/goveralls
 
 script:
+  - go test -race -coverprofile=coverage.txt -covermode=atomic
   - $HOME/gopath/bin/goveralls -service=travis-ci
   - go test -v ./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

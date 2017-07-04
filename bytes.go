@@ -5,8 +5,11 @@ import (
 	"time"
 )
 
+// EmptyBytes define empty bytes
 var EmptyBytes []byte = []byte{}
 
+// randomBytes returns a pseudo-random bytes with n and letters.
+// n is bytes length. letters is the random range.
 func randomBytes(n int, letters string) []byte {
 	if n <= 0 {
 		return EmptyBytes
@@ -26,10 +29,12 @@ func randomBytes(n int, letters string) []byte {
 	return b
 }
 
+// RandomBytes returns a pseudo-random bytes, n is length.
 func RandomBytes(n int) []byte {
 	return randomBytes(n, letterBytes_09aZ)
 }
 
+// RandomBytesByTime returns a pseudo-random bytes by time seed, n is length.
 func RandomBytesByTime(n int) []byte {
 	if n <= 5 {
 		return EmptyBytes

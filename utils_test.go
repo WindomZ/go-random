@@ -32,3 +32,17 @@ func TestUtils_pnInt64(t *testing.T) {
 	assert.Equal(t, pnInt64(1), int64(1))
 	assert.Equal(t, pnInt64(2), int64(2))
 }
+
+func TestUtils_pnFloat32(t *testing.T) {
+	assert.Equal(t, pnFloat32(-1.1), float32(1))
+	assert.Equal(t, pnFloat32(0), float32(1))
+	assert.Equal(t, pnFloat32(1.1), float32(1.1))
+	assert.Equal(t, pnFloat32(2.2), float32(2.2))
+}
+
+func TestUtils_pnFloat64(t *testing.T) {
+	assert.Equal(t, pnFloat64(-1.1), float64(1))
+	assert.Equal(t, pnFloat64(0), float64(1))
+	assert.Equal(t, pnFloat64(1.1), float64(1.1))
+	assert.Equal(t, pnFloat64(2.2), float64(2.2))
+}

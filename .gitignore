@@ -23,9 +23,11 @@ _testmain.go
 *.test
 *.prof
 
-# idea
-.idea/
+# IntelliJ project files
+.idea
 *.iml
+out
+gen
 projectFilesBackup/
 
 # coverage

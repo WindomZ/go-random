@@ -20,6 +20,8 @@
 
 ## Usage
 
+[![GoDoc](https://godoc.org/github.com/WindomZ/go-random?status.svg)](https://godoc.org/github.com/WindomZ/go-random)
+
 ```
 go get -u github.com/WindomZ/go-random
 ```
